@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Activity.AddUpdateDoctorActivity">
+
+    <include
+        android:id="@+id/topbar_adddoctor"
+        layout="@layout/topbar_primary" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnback_adddoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_back_white" />
+
+        <TextView
+            android:id="@+id/titlebar_adddoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/titilebar_adddoctor"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topbar_adddoctor"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_upload_imgprofile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_imageProfileDoctor"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/icon_default_profile"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="0.5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_imageUploadProfileDoctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_round_primary"
+                    android:contentDescription="@string/todo"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_img_upload_white"
+                    app:layout_constraintBottom_toBottomOf="@+id/civ_imageProfileDoctor"
+                    app:layout_constraintEnd_toEndOf="@+id/civ_imageProfileDoctor"
+                    app:layout_constraintHorizontal_bias="0.85"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/civ_imageProfileDoctor"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/iv_imageDeleteProfileDoctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_round_primary"
+                    android:contentDescription="@string/todo"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_img_delete_white"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/civ_imageProfileDoctor"
+                    app:layout_constraintEnd_toEndOf="@+id/civ_imageProfileDoctor"
+                    app:layout_constraintHorizontal_bias="0.85"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/civ_imageProfileDoctor"
+                    app:layout_constraintVertical_bias="1.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_bginput_adddoctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cl_upload_imgprofile"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="25dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/et_username_adddoctor"
+                            android:layout_width="250dp"
+                            android:layout_height="40dp"
+                            android:autofillHints=""
+                            android:background="@drawable/bg_round_white"
+                            android:hint="@string/hint_namedr"
+                            android:inputType="textCapWords"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="10dp"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_polidoctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/input_username"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/et_polidoctor_adddoctor"
+                            android:layout_width="250dp"
+                            android:layout_height="40dp"
+                            android:autofillHints=""
+                            android:background="@drawable/bg_round_white"
+                            android:hint="@string/hint_polidoctor"
+                            android:inputType="textCapWords"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="10dp"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_workday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/input_polidoctor"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <EditText
+                            android:id="@+id/et_workday_adddoctor"
+                            android:layout_width="250dp"
+                            android:layout_height="40dp"
+                            android:autofillHints=""
+                            android:background="@drawable/bg_round_white"
+                            android:enabled="false"
+                            android:hint="@string/hint_workday"
+                            android:inputType="textCapWords"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="10dp"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_timesetting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/input_workday"
+                        android:layout_marginBottom="20dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp">
+
+                        <TextView
+                            android:id="@+id/tv_timesetting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="5dp"
+                            android:text="@string/str_timesetting"
+                            android:textColor="@color/colorBlack" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_timesetting"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/img_picktimestart"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/ic_round_time_black" />
+
+                                <EditText
+                                    android:id="@+id/et_timestart"
+                                    android:layout_width="60dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="2dp"
+                                    android:autofillHints=""
+                                    android:background="@drawable/bg_round_white"
+                                    android:enabled="false"
+                                    android:hint="@string/hint_start"
+                                    android:inputType="number"
+                                    android:textAlignment="center"
+                                    android:textSize="14sp"
+                                    tools:ignore="LabelFor" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/img_picktimefinish"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/todo"
+                                    android:src="@drawable/ic_round_time_black" />
+
+                                <EditText
+                                    android:id="@+id/et_timefinish"
+                                    android:layout_width="60dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="2dp"
+                                    android:autofillHints=""
+                                    android:background="@drawable/bg_round_white"
+                                    android:enabled="false"
+                                    android:hint="@string/hint_finish"
+                                    android:inputType="number"
+                                    android:textAlignment="center"
+                                    android:textSize="14sp"
+                                    tools:ignore="LabelFor" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/input_workday"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toEndOf="@+id/rl_timesetting"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/et_limitseat"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:autofillHints=""
+                            android:background="@drawable/bg_round_white"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            tools:ignore="LabelFor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/et_limitseat"
+                            android:text="@string/note_limit"
+                            android:textColor="@color/colorBlack" />
+                    </RelativeLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_btnadddoctor"
+                        android:layout_width="100dp"
+                        android:layout_height="35dp"
+                        android:layout_below="@id/rl_timesetting"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="20dp"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="13dp"
+                        app:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_adddoctor"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_adddoctor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/str_add"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

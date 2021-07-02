@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Activity.PickQueuePatientActivity">
+
+    <include
+        android:id="@+id/topbar_adddoctor"
+        layout="@layout/topbar_primary" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnback_registry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_back_white" />
+
+        <TextView
+            android:id="@+id/titlebar_adddoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/str_form_pendaftaran"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topbar_adddoctor"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_upload_imgprofile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_imageProfilePatient"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/icon_default_profile"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="0.5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_bginput_adddoctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cl_upload_imgprofile"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="25dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_estimateAdmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/input_estimateAdmin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <EditText
+                                android:id="@+id/et_estimateAdmin"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:autofillHints=""
+                                android:background="@drawable/bg_round_white"
+                                android:hint="@string/hint_estimasi"
+                                android:inputType="number"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="10dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_saveEstimateAdmin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="25dp"
+                            android:background="@drawable/bg_round_white"
+                            android:contentDescription="@string/todo"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_save_primary" />
+                    </LinearLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_patientname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_estimateAdmin"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/et_patientname"
+                            android:layout_width="250dp"
+                            android:layout_height="40dp"
+                            android:autofillHints=""
+                            android:background="@drawable/bg_round_white"
+                            android:enabled="false"
+                            android:hint="@string/hint_nama_pasien"
+                            android:inputType="textCapWords"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="10dp"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--                    Data Sebelumnya -->
+
+                    <!--                    <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                        android:id="@+id/input_numberphone"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_below="@id/input_patientname"-->
+                    <!--                        android:layout_centerHorizontal="true"-->
+                    <!--                        android:layout_marginTop="10dp">-->
+
+                    <!--                        <EditText-->
+                    <!--                            android:id="@+id/et_numberphone"-->
+                    <!--                            android:layout_width="250dp"-->
+                    <!--                            android:layout_height="40dp"-->
+                    <!--                            android:autofillHints=""-->
+                    <!--                            android:background="@drawable/bg_round_white"-->
+                    <!--                            android:hint="@string/hint_nohp_pasien"-->
+                    <!--                            android:inputType="number"-->
+                    <!--                            android:paddingStart="20dp"-->
+                    <!--                            android:paddingEnd="10dp"-->
+                    <!--                            tools:ignore="TextFields" />-->
+                    <!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <!--                    <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                        android:id="@+id/input_patientcomplains"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_below="@id/input_numberphone"-->
+                    <!--                        android:layout_centerHorizontal="true"-->
+                    <!--                        android:layout_marginTop="10dp">-->
+
+                    <!--                        <EditText-->
+                    <!--                            android:id="@+id/et_patientcomplains"-->
+                    <!--                            android:layout_width="250dp"-->
+                    <!--                            android:layout_height="40dp"-->
+                    <!--                            android:autofillHints=""-->
+                    <!--                            android:background="@drawable/bg_round_white"-->
+                    <!--                            android:hint="@string/str_keluhan_pasien"-->
+                    <!--                            android:inputType="textCapSentences"-->
+                    <!--                            android:paddingStart="20dp"-->
+                    <!--                            android:paddingEnd="10dp" />-->
+                    <!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <!--                    <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                        android:id="@+id/input_patientaddress"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_below="@id/input_patientcomplains"-->
+                    <!--                        android:layout_centerHorizontal="true"-->
+                    <!--                        android:layout_marginTop="10dp">-->
+
+                    <!--                        <EditText-->
+                    <!--                            android:id="@+id/et_patientaddress"-->
+                    <!--                            android:layout_width="250dp"-->
+                    <!--                            android:layout_height="40dp"-->
+                    <!--                            android:autofillHints=""-->
+                    <!--                            android:background="@drawable/bg_round_white"-->
+                    <!--                            android:hint="@string/hint_alamat_pasien"-->
+                    <!--                            android:inputType="textCapSentences"-->
+                    <!--                            android:paddingStart="20dp"-->
+                    <!--                            android:paddingEnd="10dp" />-->
+                    <!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <!--                    <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                        android:id="@+id/input_patientage"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_below="@id/input_patientaddress"-->
+                    <!--                        android:layout_centerHorizontal="true"-->
+                    <!--                        android:layout_marginTop="10dp">-->
+
+                    <!--                        <EditText-->
+                    <!--                            android:id="@+id/et_patientage"-->
+                    <!--                            android:layout_width="250dp"-->
+                    <!--                            android:layout_height="40dp"-->
+                    <!--                            android:autofillHints=""-->
+                    <!--                            android:background="@drawable/bg_round_white"-->
+                    <!--                            android:hint="@string/hint_umur_pasien"-->
+                    <!--                            android:inputType="textCapWords"-->
+                    <!--                            android:paddingStart="20dp"-->
+                    <!--                            android:paddingEnd="10dp" />-->
+                    <!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <!--                    <com.google.android.material.textfield.TextInputLayout-->
+                    <!--                        android:id="@+id/input_patientgender"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_below="@id/input_patientage"-->
+                    <!--                        android:layout_centerHorizontal="true"-->
+                    <!--                        android:layout_marginTop="10dp">-->
+
+                    <!--                        <EditText-->
+                    <!--                            android:id="@+id/et_patientgender"-->
+                    <!--                            android:layout_width="250dp"-->
+                    <!--                            android:layout_height="40dp"-->
+                    <!--                            android:autofillHints=""-->
+                    <!--                            android:background="@drawable/bg_round_white"-->
+                    <!--                            android:hint="@string/hint_jenis_pasien"-->
+                    <!--                            android:inputType="textCapWords"-->
+                    <!--                            android:paddingStart="20dp"-->
+                    <!--                            android:paddingEnd="10dp" />-->
+                    <!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+
+                    <!--                    Revisi ke 4 -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_norekammedis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/input_patientname"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/et_no_rekammedis"
+                            android:layout_width="250dp"
+                            android:layout_height="40dp"
+                            android:autofillHints=""
+                            android:background="@drawable/bg_round_white"
+                            android:hint="@string/hint_norekammedis_pasien"
+                            android:inputType="number"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="10dp"
+                            android:textSize="15sp"
+                            tools:ignore="TextFields" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_cara_pembayaran"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/input_norekammedis"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/et_cara_pembayaran"
+                            android:layout_width="250dp"
+                            android:layout_height="40dp"
+                            android:autofillHints=""
+                            android:background="@drawable/bg_round_white"
+                            android:hint="@string/hint_cara_pembayaran"
+                            android:inputType="textCapCharacters"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="10dp"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/input_asal_rujukan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/input_cara_pembayaran"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/et_asal_rujukan"
+                            android:layout_width="250dp"
+                            android:layout_height="40dp"
+                            android:autofillHints=""
+                            android:background="@drawable/bg_round_white"
+                            android:hint="@string/hint_asal_rujukan"
+                            android:inputType="textCapSentences"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="10dp"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pickpoliklinik"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/input_asal_rujukan"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/et_pick_polindoctor"
+                            android:layout_width="220dp"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:background="@drawable/bg_round_white"
+                            android:enabled="false"
+                            android:hint="@string/hint_pilih_poliklinik"
+                            android:inputType="text"
+                            android:paddingStart="20dp"
+                            android:paddingTop="7dp"
+                            android:paddingEnd="20dp"
+                            android:paddingBottom="7dp"
+                            android:textAlignment="center"
+                            android:textSize="15sp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_btn_pickpoliklinik"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="15dp"
+                            app:cardElevation="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/ic_round_add_accent" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_btnpatientregis"
+                        android:layout_width="100dp"
+                        android:layout_height="35dp"
+                        android:layout_below="@id/pickpoliklinik"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="13dp"
+                        app:cardElevation="6dp">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_regist_patient"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_regist_patient"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/str_daftar"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
